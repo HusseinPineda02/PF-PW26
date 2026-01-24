@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>H-Tech Store</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>H-Tech Store</h1>
+            <nav aria-label="Menú">
+                <a href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#datos">Nosotros</a>
+                <a href="#multimedia">Multimedia</a>
+                <a href="#contacto">Contáctanos</a>
+            </nav>
+        </div>
+    </header>    
+
+    <main class="container">
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Bienvenido a H-Tech Store, tu tienda online donde podrás encontrar los accesorios
+                y componentes para que armes la PC de tus sueños
+            </p>
+            <img src="./img/img1gaming.jpg" alt="Imagen Setup">
+        </section>
+
+        <section id="catalogo">
+            <h2>Catálogo</h2>
+
+            <div class="tarjeta">
+                <article>
+                    <span class="etiqueta">Componentes</span>
+                    <h3>Tarjetas Gráficas | GPU</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </article>
+
+                <article>
+                    <span class="etiqueta">Componentes</span>
+                    <h3>Tarjetas Gráficas | GPU</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </article>
+
+                <article>
+                    <span class="etiqueta">Periféricos</span>
+                    <h3>Teclados y Mouse</h3>
+                    <p class="muted">Mecánicos, RGB, alta precisión.</p>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </article>
+
+                <article>
+                    <span class="etiqueta">Pantallas</span>
+                    <h3>Monitores</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </article>
+
+                <article>
+                    <span class="etiqueta">Almacenamiento</span>
+                    <h3>SDD & HDD</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </article>
+
+                <article>
+                    <span class="etiqueta">Audio</span>
+                    <h3>Auriculares</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="datos">
+            <h2>Datos</h2>
+            <p>Lista de productos disponibles</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">GPU</td>
+                        <td>Nvidia Geforce RTX 4060 8GB</td>
+                        <td>S/ 1,599</td>
+                        <td>5</td>
+                        <td>48h</td>
+                    </tr>
+                    <tr>
+                        <td>GPU</td>
+                        <td>AMD Radeon RX 7600 8GB</td>
+                        <td>S/ 1,299</td>
+                        <td>8</td>
+                        <td>24-48h</td>
+                    </tr>
+                    <tr>
+                        <td>CPU</td>
+                        <td>Ryzen 5 5500</td>
+                        <td>S/ 499</td>
+                        <td>8</td>
+                        <td>72h</td>
+                    </tr>
+                    <tr>
+                        <td>Motherboard</td>
+                        <td>B760M</td>
+                        <td>S/ 450</td>
+                        <td>3</td>
+                        <td>24-48h</td>
+                    </tr>
+                    <tr>
+                        <td>Teclados</td>
+                        <td>Logitech MX Mechanical</td>
+                        <td>S/ 699</td>
+                        <td>15</td>
+                        <td>24h</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            Envíos: Gratis por compras a partir de S/450. Ofrecemos pago a contraentrega.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="multimedia">
+            <h2>Multimedia</h2>
+            
+            <video controls width="100%">
+                <source src="vid/logi.mp4" type="video/mp4">
+            </video>
+
+            <audio controls>
+                <source src="media/fire.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+
+            <form action="" method="post">
+                <div class="fila"></div>
+                    <div>
+                        <label>Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Ingresa aquí tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Ingresa aquí tu correo" required />
+                    </div>
+                </div>
+
+                <div class="fila">
+                    <div>
+                        <label>Interés</label>
+                        <select id="interes" name="interes" required>
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option value="ofertas">Recibir ofertas</option>
+                        <option value="cotizacion">Solicitar cotización</option>
+                        <option value="soporte">Soporte / Consulta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Ejemplo: Quiero una RTX 4060 con envío a..." required></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        © 2026 · H Tech Store · Componentes y periféricos gamer · Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
