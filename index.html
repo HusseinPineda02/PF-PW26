@@ -8,33 +8,31 @@
     <style>
         
         * {
-            box-sizing: border-box;
+                box-sizing: border-box;
         }
 
         :root {
         --bg: #000000;
-        --navy: #071427;    
-        --navy2:#0b1e3a;    
-        --line:#152a45;
-        --text:#eaeaea;
+        --linea:#152a45;
+        --texto:#eaeaea;
         }
 
         body {
         margin: 0;
         font-family: sans-serif;
         background: var(--bg);
-        color: var(--text);
-        line-height: 1.5;
+        color: var(--texto);
+        line-height: 1;
         }
 
         .container {
         max-width: 1000px;
         margin: 0 auto;
-        padding: 0 16px;
+        padding: 0 15px;
         }
 
         header {
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--linea);
         background: rgba(0,0,0,0.92);
         position: sticky;
         top: 0;
@@ -42,7 +40,7 @@
         }
 
         header .container {
-        padding: 14px 16px;
+        padding: 15px 15px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -52,12 +50,12 @@
 
         h1 {
         margin: 0;
-        font-size: 18px;
-        letter-spacing: 0.5px;
+        font-size: 20px;
+        letter-spacing: 2px;
         }
 
         nav a {
-        color: var(--text);
+        color: var(--texto);
         text-decoration: none;
         padding: 8px 10px;
         border-radius: 10px;
@@ -66,18 +64,20 @@
         }
 
         nav a:hover {
-        border-color: var(--line);
+        border-color: var(--linea);
         background: rgba(11,30,58,0.35);
         }
 
-        main { padding: 16px 0 26px; }
+        main {
+            padding: 10px 0 20px;
+        }
 
         section {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 16px;
-        margin: 14px 0;
-        background: rgba(7,20,39,0.55);
+        border: 1px solid var(--linea);
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px 0;
+        background: rgba(7, 20, 39, 0.589);
         }
 
         section h2 {
@@ -93,7 +93,7 @@
         width: 100%;
         margin-top: 10px;
         border-radius: 12px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--linea);
         display: block;
         object-fit: cover;
         max-height: 360px;
@@ -107,7 +107,7 @@
         }
 
         .tarjeta article {
-        border: 1px solid var(--line);
+        border: 1px solid var(--linea);
         border-radius: 14px;
         overflow: hidden;
         background: rgba(11,30,58,0.25);
@@ -125,7 +125,7 @@
         height: 150px;
         display: block;
         object-fit: cover;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--linea);
         filter: saturate(0.95) contrast(1.05);
         }
 
@@ -154,7 +154,7 @@
         border-radius: 10px;
         border: 1px solid rgba(234,234,234,0.20);
         background: rgba(0,0,0,0.35);
-        color: var(--text);
+        color: var(--texto);
         text-decoration: none;
         }
 
@@ -177,7 +177,7 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--linea);
         border-radius: 12px;
         overflow: hidden;
         background: rgba(0,0,0,0.30);
@@ -187,14 +187,14 @@
         text-align: left;
         padding: 10px;
         font-size: 13px;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--linea);
         background: rgba(11,30,58,0.45);
         }
 
         tbody td {
         padding: 10px;
         font-size: 13px;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid var(--linea);
         }
 
         tbody tr:hover {
@@ -231,9 +231,9 @@
         width: 100%;
         padding: 10px;
         border-radius: 12px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--linea);
         background: rgba(0,0,0,0.35);
-        color: var(--text);
+        color: var(--texto);
         outline: none;
         }
 
@@ -247,7 +247,7 @@
         border-radius: 12px;
         border: 1px solid rgba(234,234,234,0.22);
         background: rgba(11,30,58,0.40);
-        color: var(--text);
+        color: var(--texto);
         font-weight: bold;
         cursor: pointer;
         }
@@ -261,7 +261,7 @@
         width: 100%;
         margin-top: 10px;
         border-radius: 12px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--linea);
         background: rgba(0,0,0,0.20);
         }
 
@@ -274,11 +274,11 @@
         object-fit: contain;       
         background: #000;
         border-radius: 12px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--linea);
         }
 
         footer {
-        border-top: 1px solid var(--line);
+        border-top: 1px solid var(--linea);
         padding: 18px 16px;
         color: #bdbdbd;
         text-align: center;
@@ -317,57 +317,57 @@
 
         <div class="tarjeta">
             <article>
-            <img src="./img/rtx4060.jpg" alt="Tarjeta gráfica RTX 4060">
-            <div class="content">
-                <span class="etiqueta">GPU</span>
-                <h3>Nvidia GeForce RTX 4060 8GB</h3>
-                <a class="btn" href="#contacto">Lo quiero</a>
-            </div>
+                <img src="./img/rtx4060.jpg" alt="Tarjeta gráfica RTX 4060">
+                <div class="content">
+                    <span class="etiqueta">GPU</span>
+                    <h3>Nvidia GeForce RTX 4060 8GB</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </div>
             </article>
 
             <article>
-            <img src="./img/rx7600.jpg" alt="Tarjeta gráfica RX 7600">
-            <div class="content">
-                <span class="etiqueta">GPU</span>
-                <h3>AMD Radeon RX 7600 8GB</h3>
-                <a class="btn" href="#contacto">Lo quiero</a>
-            </div>
+                <img src="./img/rx7600.jpg" alt="Tarjeta gráfica RX 7600">
+                <div class="content">
+                    <span class="etiqueta">GPU</span>
+                    <h3>AMD Radeon RX 7600 8GB</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </div>
             </article>
 
             <article>
-            <img src="./img/ryzen5500.jpg" alt="Procesador Ryzen 5 5500">
-            <div class="content">
-                <span class="etiqueta">CPU</span>
-                <h3>Ryzen 5 5500</h3>
-                <a class="btn" href="#contacto">Lo quiero</a>
-            </div>
+                <img src="./img/ryzen5500.jpg" alt="Procesador Ryzen 5 5500">
+                <div class="content">
+                    <span class="etiqueta">CPU</span>
+                    <h3>Ryzen 5 5500</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </div>
             </article>
 
             <article>
-            <img src="./img/b760m.png" alt="Placa madre Msi B760M">
-            <div class="content">
-                <span class="etiqueta">Motherboard</span>
-                <h3>Msi B760M</h3>
-                <a class="btn" href="#contacto">Lo quiero</a>
-            </div>
+                <img src="./img/b760m.png" alt="Placa madre Msi B760M">
+                <div class="content">
+                    <span class="etiqueta">Motherboard</span>
+                    <h3>Msi B760M</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </div>
             </article>
 
             <article>
-            <img src="./img/mxmech.png" alt="Teclado Logitech MX Mechanical">
-            <div class="content">
-                <span class="etiqueta">Teclados</span>
-                <h3>Logitech MX Mechanical</h3>
-                <a class="btn" href="#contacto">Lo quiero</a>
-            </div>
+                <img src="./img/mxmech.png" alt="Teclado Logitech MX Mechanical">
+                <div class="content">
+                    <span class="etiqueta">Teclados</span>
+                    <h3>Logitech MX Mechanical</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </div>
             </article>
 
             <article>
-            <img src="./img/g522.jpg" alt="Auriculares Logitech G522">
-            <div class="content">
-                <span class="etiqueta">Auriculares</span>
-                <h3>Logitech G522</h3>
-                <a class="btn" href="#contacto">Lo quiero</a>
-            </div>
+                <img src="./img/g522.jpg" alt="Auriculares Logitech G522">
+                <div class="content">
+                    <span class="etiqueta">Auriculares</span>
+                    <h3>Logitech G522</h3>
+                    <a class="btn" href="#contacto">Lo quiero</a>
+                </div>
             </article>
         </div>
         </section>
@@ -387,66 +387,66 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td rowspan="2">GPU</td>
-                <td>Nvidia Geforce RTX 4060 8GB</td>
-                <td>S/ 1,599</td>
-                <td>5</td>
-                <td>48h</td>
-            </tr>
-            <tr>
-                <td>AMD Radeon RX 7600 8GB</td>
-                <td>S/ 1,299</td>
-                <td>8</td>
-                <td>24-48h</td>
-            </tr>
-            <tr>
-                <td>CPU</td>
-                <td>Ryzen 5 5500</td>
-                <td>S/ 499</td>
-                <td>8</td>
-                <td>72h</td>
-            </tr>
-            <tr>
-                <td>Motherboard</td>
-                <td>Msi B760M</td>
-                <td>S/ 450</td>
-                <td>3</td>
-                <td>24-48h</td>
-            </tr>
-            <tr>
-                <td>Teclados</td>
-                <td>Logitech MX Mechanical</td>
-                <td>S/ 699</td>
-                <td>15</td>
-                <td>24h</td>
-            </tr>
-            <tr>
-                <td>Auriculares</td>
-                <td>Logitech G522</td>
-                <td>S/ 599</td>
-                <td>10</td>
-                <td>48h</td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                Envíos a todo Lima y provincias. Gratis por compras a partir de S/650. Ofrecemos pago a contraentrega.
-                </td>
-            </tr>
+                <tr>
+                    <td rowspan="2">GPU</td>
+                    <td>Nvidia Geforce RTX 4060 8GB</td>
+                    <td>S/ 1,599</td>
+                    <td>5</td>
+                    <td>48h</td>
+                </tr>
+                <tr>
+                    <td>AMD Radeon RX 7600 8GB</td>
+                    <td>S/ 1,299</td>
+                    <td>8</td>
+                    <td>24-48h</td>
+                </tr>
+                <tr>
+                    <td>CPU</td>
+                    <td>Ryzen 5 5500</td>
+                    <td>S/ 499</td>
+                    <td>8</td>
+                    <td>72h</td>
+                </tr>
+                <tr>
+                    <td>Motherboard</td>
+                    <td>Msi B760M</td>
+                    <td>S/ 450</td>
+                    <td>3</td>
+                    <td>24-48h</td>
+                </tr>
+                <tr>
+                    <td>Teclados</td>
+                    <td>Logitech MX Mechanical</td>
+                    <td>S/ 699</td>
+                    <td>15</td>
+                    <td>24h</td>
+                </tr>
+                <tr>
+                    <td>Auriculares</td>
+                    <td>Logitech G522</td>
+                    <td>S/ 599</td>
+                    <td>10</td>
+                    <td>48h</td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                    Envíos a todo Lima y provincias. Gratis por compras a partir de S/650. Ofrecemos pago a contraentrega.
+                    </td>
+                </tr>
             </tbody>
         </table>
         </section>
 
         <section id="multimedia">
-        <h2>Multimedia</h2>
+            <h2>Multimedia</h2>
 
-        <video controls width="100%">
-            <source src="media/logi.mp4" type="video/mp4">
-        </video>
+            <video controls width="100%">
+                <source src="media/logi.mp4" type="video/mp4">
+            </video>
 
-        <audio controls>
-            <source src="media/fire.mp3" type="audio/mpeg">
-        </audio>
+            <audio controls>
+                <source src="media/fire.mp3" type="audio/mpeg">
+            </audio>
         </section>
 
         <section id="contacto">
@@ -454,35 +454,35 @@
 
             <form action="" method="post" autocomplete="off">
                 <div class="fila">
-                <div>
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre" name="nombre" type="text" placeholder="Ingresa aquí tu nombre" required>
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="Ingresa aquí tu correo" required>
-                </div>
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Ingresa aquí tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Ingresa aquí tu correo" required>
+                    </div>
                 </div>
 
                 <div class="fila">
-                <div>
-                    <label for="interes">Interés</label>
-                    <select id="interes" name="interes" required>
-                    <option value="" selected disabled>Selecciona una opción</option>
-                    <option value="ofertas">Recibir ofertas</option>
-                    <option value="cotizacion">Solicitar cotización</option>
-                    <option value="soporte">Soporte / Consulta</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="mensaje">Mensaje</label>
-                    <input id="mensaje" name="mensaje" type="text" placeholder="Ejemplo: Quiero una RTX 4060 con envío a..." required>
-                </div>
+                    <div>
+                        <label for="interes">Interés</label>
+                        <select id="interes" name="interes" required>
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="ofertas">Recibir ofertas</option>
+                            <option value="cotizacion">Solicitar cotización</option>
+                            <option value="soporte">Soporte / Consulta</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <input id="mensaje" name="mensaje" type="text" placeholder="Ejemplo: Quiero una RTX 4060 con envío a..." required>
+                    </div>
                 </div>
 
                 <div>
-                <label for="detalle">Detalle</label>
-                <textarea id="detalle" name="detalle" rows="5" placeholder="Escribe detalles como ciudad, producto y presupuesto..." required></textarea>
+                    <label for="detalle">Detalle</label>
+                    <textarea id="detalle" name="detalle" rows="5" placeholder="Escribe detalles como ciudad, producto y presupuesto..." required></textarea>
                 </div>
 
                 <button type="submit">Enviar</button>
