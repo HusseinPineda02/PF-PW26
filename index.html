@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H-Tech Store</title>
 
     <style>
-        * { box-sizing: border-box; }
+        
+        * {
+            box-sizing: border-box;
+        }
 
-        body{
+        :root {
+        --bg: #000000;
+        --navy: #071427;    
+        --navy2:#0b1e3a;    
+        --line:#152a45;
+        --text:#eaeaea;
+        }
+
+        body {
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #000;            
-        color: #eaeaea;
+        font-family: sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.5;
         }
 
-        .container{
+        .container {
         max-width: 1000px;
         margin: 0 auto;
         padding: 0 16px;
         }
 
-        header{
-        border-bottom: 1px solid #222;
-        background: #050505;
+        header {
+        border-bottom: 1px solid var(--line);
+        background: rgba(0,0,0,0.92);
         position: sticky;
         top: 0;
         z-index: 10;
         }
 
-        header .container{
+        header .container {
         padding: 14px 16px;
         display: flex;
         align-items: center;
@@ -39,14 +50,14 @@
         flex-wrap: wrap;
         }
 
-        h1{
+        h1 {
         margin: 0;
         font-size: 18px;
         letter-spacing: 0.5px;
         }
 
-        nav a{
-        color: #eaeaea;
+        nav a {
+        color: var(--text);
         text-decoration: none;
         padding: 8px 10px;
         border-radius: 10px;
@@ -54,135 +65,140 @@
         display: inline-block;
         }
 
-        nav a:hover{
-        border-color: #333;
-        background: #0f0f0f;
+        nav a:hover {
+        border-color: var(--line);
+        background: rgba(11,30,58,0.35);
         }
 
-        main{ padding: 16px 0 26px; }
+        main { padding: 16px 0 26px; }
 
-        section{
-        border: 1px solid #222;
+        section {
+        border: 1px solid var(--line);
         border-radius: 14px;
         padding: 16px;
         margin: 14px 0;
-        background: #070707;
+        background: rgba(7,20,39,0.55);
         }
 
-        section h2{
+        section h2 {
         margin: 0 0 10px 0;
         font-size: 18px;
         }
 
-        p{ margin: 8px 0; }
-
-        .muted{
-        color: #bdbdbd;
-        font-size: 13px;
+        p {
+            margin: 8px 0;
         }
 
-        #inicio img{
+        #inicio img {
         width: 100%;
         margin-top: 10px;
         border-radius: 12px;
-        border: 1px solid #222;
+        border: 1px solid var(--line);
         display: block;
         object-fit: cover;
+        max-height: 360px;
         }
 
-        .tarjeta{
+        .tarjeta {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
         margin-top: 10px;
         }
 
-        .tarjeta article{
-        border: 1px solid #222;
+        .tarjeta article {
+        border: 1px solid var(--line);
         border-radius: 14px;
         overflow: hidden;
-        background: #0b0b0b;
-        transition: transform 0.15s ease, border-color 0.15s ease;
+        background: rgba(11,30,58,0.25);
+        transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
         }
 
-        .tarjeta article:hover{
+        .tarjeta article:hover {
         transform: scale(1.03);
-        border-color: #444;
+        border-color: #25456f;
+        background: rgba(11,30,58,0.38);
         }
 
-        .tarjeta article img{
+        .tarjeta article img {
         width: 100%;
         height: 150px;
         display: block;
         object-fit: cover;
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid var(--line);
+        filter: saturate(0.95) contrast(1.05);
         }
 
-        .tarjeta article .content{
+        .tarjeta article .content {
         padding: 12px;
         }
 
-        .etiqueta{
+        .etiqueta {
         display: inline-block;
         font-size: 12px;
         color: #bdbdbd;
-        border: 1px solid #2a2a2a;
+        border: 1px solid rgba(234,234,234,0.18);
         padding: 4px 8px;
         border-radius: 999px;
+        background: rgba(0,0,0,0.25);
         }
 
-        .tarjeta article h3{
+        .tarjeta article h3 {
         margin: 8px 0 10px;
         font-size: 15px;
         }
 
-        .btn{
+        .btn {
         display: inline-block;
         padding: 8px 10px;
         border-radius: 10px;
-        border: 1px solid #333;
-        background: #111;
-        color: #eaeaea;
+        border: 1px solid rgba(234,234,234,0.20);
+        background: rgba(0,0,0,0.35);
+        color: var(--text);
         text-decoration: none;
         }
 
-        .btn:hover{
-        background: #171717;
+        .btn:hover {
+        background: rgba(0,0,0,0.55);
+        border-color: rgba(234,234,234,0.30);
         }
 
-        @media (max-width: 900px){
-        .tarjeta{ grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 900px) {
+            .tarjeta{
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-        @media (max-width: 640px){
-        .tarjeta{ grid-template-columns: 1fr; }
+        @media (max-width: 640px) {
+            .tarjeta { grid-template-columns: 1fr;
+            }
         }
 
-        table{
+        table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
-        border: 1px solid #222;
+        border: 1px solid var(--line);
         border-radius: 12px;
         overflow: hidden;
-        background: #0b0b0b;
+        background: rgba(0,0,0,0.30);
         }
 
-        thead th{
+        thead th {
         text-align: left;
         padding: 10px;
         font-size: 13px;
-        border-bottom: 1px solid #222;
-        background: #101010;
+        border-bottom: 1px solid var(--line);
+        background: rgba(11,30,58,0.45);
         }
 
-        tbody td{
+        tbody td {
         padding: 10px;
         font-size: 13px;
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid var(--line);
         }
 
-        tbody tr:hover{
-        background: #0f0f0f;
+        tbody tr:hover {
+        background: rgba(11,30,58,0.22);
         }
 
         form{
@@ -192,62 +208,81 @@
         margin-top: 10px;
         }
 
-        .fila{
+        .fila {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         }
 
-        @media (max-width: 700px){
-        .fila{ grid-template-columns: 1fr; }
+        @media (max-width: 700px) {
+            .fila{
+                grid-template-columns: 1fr;
+            }
         }
 
-        label{
+        label {
         font-weight: bold;
         font-size: 13px;
         display: block;
         margin-bottom: 6px;
         }
 
-        input, select, textarea{
+        input, select, textarea {
         width: 100%;
         padding: 10px;
         border-radius: 12px;
-        border: 1px solid #222;
-        background: #0b0b0b;
-        color: #eaeaea;
+        border: 1px solid var(--line);
+        background: rgba(0,0,0,0.35);
+        color: var(--text);
         outline: none;
         }
 
-        input:focus, select:focus, textarea:focus{
-        border-color: #444;
+        input:focus, select:focus, textarea:focus {
+        border-color: #25456f;
         }
 
-        button{
+        button {
         width: fit-content;
         padding: 10px 12px;
         border-radius: 12px;
-        border: 1px solid #333;
-        background: #111;
-        color: #eaeaea;
+        border: 1px solid rgba(234,234,234,0.22);
+        background: rgba(11,30,58,0.40);
+        color: var(--text);
         font-weight: bold;
         cursor: pointer;
         }
 
-        button:hover{ background: #171717; }
+        button:hover {
+        background: rgba(11,30,58,0.55);
+        border-color: rgba(234,234,234,0.30);
+        }
 
-        video, audio{
+        video, audio {
         width: 100%;
         margin-top: 10px;
         border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(0,0,0,0.20);
         }
 
-        footer{
-        border-top: 1px solid #222;
+        #multimedia video{
+        display: block;
+        width: min(360px, 100%); 
+        aspect-ratio: 9 / 16;      
+        height: auto;
+        margin: 10px auto 0;       
+        object-fit: contain;       
+        background: #000;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        }
+
+        footer {
+        border-top: 1px solid var(--line);
         padding: 18px 16px;
         color: #bdbdbd;
         text-align: center;
-        background: #050505;
+        background: rgba(0,0,0,0.92);
         }
     </style>
 </head>
@@ -256,179 +291,207 @@
 
     <header>
         <div class="container">
-            <h1>H-Tech Store</h1>
-            <nav aria-label="Menú">
-                <a href="#inicio">Inicio</a>
-                <a href="#catalogo">Catálogo</a>
-                <a href="#datos">Nosotros</a>
-                <a href="#multimedia">Multimedia</a>
-                <a href="#contacto">Contáctanos</a>
-            </nav>
+        <h1>H-Tech Store</h1>
+        <nav aria-label="Menú">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#datos">Productos</a>
+            <a href="#multimedia">Multimedia</a>
+            <a href="#contacto">Contáctanos</a>
+        </nav>
         </div>
-    </header>    
+    </header>
 
     <main class="container">
         <section id="inicio">
-            <h2>Inicio</h2>
-            <p>Bienvenido a H-Tech Store, tu tienda online donde podrás encontrar los accesorios
-                y componentes para que armes la PC de tus sueños
-            </p>
-            <img src="./img/img1gaming.jpg" alt="Imagen Setup">
+        <h2>Inicio</h2>
+        <p>
+            Bienvenido a H-Tech Store, tu tienda online donde podrás encontrar los accesorios
+            y componentes para que armes la PC de tus sueños.
+        </p>
+        <img src="./img/img1gaming.jpg" alt="Imagen Setup">
         </section>
 
         <section id="catalogo">
-            <h2>Catálogo</h2>
+        <h2>Catálogo</h2>
 
-            <div class="tarjeta">
-                <article>
-                    <span class="etiqueta">Componentes</span>
-                    <h3>Tarjetas Gráficas | GPU</h3>
-                    <a class="btn" href="#contacto">Lo quiero</a>
-                </article>
-
-                <article>
-                    <span class="etiqueta">Componentes</span>
-                    <h3>Tarjetas Gráficas | GPU</h3>
-                    <a class="btn" href="#contacto">Lo quiero</a>
-                </article>
-
-                <article>
-                    <span class="etiqueta">Periféricos</span>
-                    <h3>Teclados y Mouse</h3>
-                    <p class="muted">Mecánicos, RGB, alta precisión.</p>
-                    <a class="btn" href="#contacto">Lo quiero</a>
-                </article>
-
-                <article>
-                    <span class="etiqueta">Pantallas</span>
-                    <h3>Monitores</h3>
-                    <a class="btn" href="#contacto">Lo quiero</a>
-                </article>
-
-                <article>
-                    <span class="etiqueta">Almacenamiento</span>
-                    <h3>SDD & HDD</h3>
-                    <a class="btn" href="#contacto">Lo quiero</a>
-                </article>
-
-                <article>
-                    <span class="etiqueta">Audio</span>
-                    <h3>Auriculares</h3>
-                    <a class="btn" href="#contacto">Lo quiero</a>
-                </article>
+        <div class="tarjeta">
+            <article>
+            <img src="./img/rtx4060.jpg" alt="Tarjeta gráfica RTX 4060">
+            <div class="content">
+                <span class="etiqueta">GPU</span>
+                <h3>Nvidia GeForce RTX 4060 8GB</h3>
+                <a class="btn" href="#contacto">Lo quiero</a>
             </div>
+            </article>
+
+            <article>
+            <img src="./img/rx7600.jpg" alt="Tarjeta gráfica RX 7600">
+            <div class="content">
+                <span class="etiqueta">GPU</span>
+                <h3>AMD Radeon RX 7600 8GB</h3>
+                <a class="btn" href="#contacto">Lo quiero</a>
+            </div>
+            </article>
+
+            <article>
+            <img src="./img/ryzen5500.jpg" alt="Procesador Ryzen 5 5500">
+            <div class="content">
+                <span class="etiqueta">CPU</span>
+                <h3>Ryzen 5 5500</h3>
+                <a class="btn" href="#contacto">Lo quiero</a>
+            </div>
+            </article>
+
+            <article>
+            <img src="./img/b760m.png" alt="Placa madre Msi B760M">
+            <div class="content">
+                <span class="etiqueta">Motherboard</span>
+                <h3>Msi B760M</h3>
+                <a class="btn" href="#contacto">Lo quiero</a>
+            </div>
+            </article>
+
+            <article>
+            <img src="./img/mxmech.png" alt="Teclado Logitech MX Mechanical">
+            <div class="content">
+                <span class="etiqueta">Teclados</span>
+                <h3>Logitech MX Mechanical</h3>
+                <a class="btn" href="#contacto">Lo quiero</a>
+            </div>
+            </article>
+
+            <article>
+            <img src="./img/g522.jpg" alt="Auriculares Logitech G522">
+            <div class="content">
+                <span class="etiqueta">Auriculares</span>
+                <h3>Logitech G522</h3>
+                <a class="btn" href="#contacto">Lo quiero</a>
+            </div>
+            </article>
+        </div>
         </section>
 
         <section id="datos">
-            <h2>Datos</h2>
-            <p>Lista de productos disponibles</p>
+        <h2>Datos</h2>
+        <p>Lista de productos disponibles</p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>Entrega</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="2">GPU</td>
-                        <td>Nvidia Geforce RTX 4060 8GB</td>
-                        <td>S/ 1,599</td>
-                        <td>5</td>
-                        <td>48h</td>
-                    </tr>
-                    <tr>
-                        <td>GPU</td>
-                        <td>AMD Radeon RX 7600 8GB</td>
-                        <td>S/ 1,299</td>
-                        <td>8</td>
-                        <td>24-48h</td>
-                    </tr>
-                    <tr>
-                        <td>CPU</td>
-                        <td>Ryzen 5 5500</td>
-                        <td>S/ 499</td>
-                        <td>8</td>
-                        <td>72h</td>
-                    </tr>
-                    <tr>
-                        <td>Motherboard</td>
-                        <td>B760M</td>
-                        <td>S/ 450</td>
-                        <td>3</td>
-                        <td>24-48h</td>
-                    </tr>
-                    <tr>
-                        <td>Teclados</td>
-                        <td>Logitech MX Mechanical</td>
-                        <td>S/ 699</td>
-                        <td>15</td>
-                        <td>24h</td>
-                    </tr>
-                    <tr>
-                        <td colspan="5">
-                            Envíos: Gratis por compras a partir de S/450. Ofrecemos pago a contraentrega.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <table>
+            <thead>
+            <tr>
+                <th>Categoría</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Entrega</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td rowspan="2">GPU</td>
+                <td>Nvidia Geforce RTX 4060 8GB</td>
+                <td>S/ 1,599</td>
+                <td>5</td>
+                <td>48h</td>
+            </tr>
+            <tr>
+                <td>AMD Radeon RX 7600 8GB</td>
+                <td>S/ 1,299</td>
+                <td>8</td>
+                <td>24-48h</td>
+            </tr>
+            <tr>
+                <td>CPU</td>
+                <td>Ryzen 5 5500</td>
+                <td>S/ 499</td>
+                <td>8</td>
+                <td>72h</td>
+            </tr>
+            <tr>
+                <td>Motherboard</td>
+                <td>Msi B760M</td>
+                <td>S/ 450</td>
+                <td>3</td>
+                <td>24-48h</td>
+            </tr>
+            <tr>
+                <td>Teclados</td>
+                <td>Logitech MX Mechanical</td>
+                <td>S/ 699</td>
+                <td>15</td>
+                <td>24h</td>
+            </tr>
+            <tr>
+                <td>Auriculares</td>
+                <td>Logitech G522</td>
+                <td>S/ 599</td>
+                <td>10</td>
+                <td>48h</td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                Envíos a todo Lima y provincias. Gratis por compras a partir de S/650. Ofrecemos pago a contraentrega.
+                </td>
+            </tr>
+            </tbody>
+        </table>
         </section>
 
         <section id="multimedia">
-            <h2>Multimedia</h2>
-            
-            <video controls width="100%">
-                <source src="vid/logi.mp4" type="video/mp4">
-            </video>
+        <h2>Multimedia</h2>
 
-            <audio controls>
-                <source src="media/fire.mp3" type="audio/mpeg">
-            </audio>
+        <video controls width="100%">
+            <source src="media/logi.mp4" type="video/mp4">
+        </video>
+
+        <audio controls>
+            <source src="media/fire.mp3" type="audio/mpeg">
+        </audio>
         </section>
 
         <section id="contacto">
-            <h2>Contáctanos</h2>
+        <h2>Contáctanos</h2>
 
-            <form action="" method="post">
+            <form action="" method="post" autocomplete="off">
                 <div class="fila">
-                    <div>
-                        <label for="nombre">Nombre</label>
-                        <input id="nombre" name="nombre" type="text" placeholder="Ingresa aquí tu nombre" required>
-                    </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="Ingresa aquí tu correo" required>
-                    </div>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" placeholder="Ingresa aquí tu nombre" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Ingresa aquí tu correo" required>
+                </div>
                 </div>
 
                 <div class="fila">
-                    <div>
-                        <label>Interés</label>
-                        <select id="interes" name="interes" required>
-                        <option value="" selected disabled>Selecciona una opción</option>
-                        <option value="ofertas">Recibir ofertas</option>
-                        <option value="cotizacion">Solicitar cotización</option>
-                        <option value="soporte">Soporte / Consulta</option>
-                        </select>
-                    </div>
+                <div>
+                    <label for="interes">Interés</label>
+                    <select id="interes" name="interes" required>
+                    <option value="" selected disabled>Selecciona una opción</option>
+                    <option value="ofertas">Recibir ofertas</option>
+                    <option value="cotizacion">Solicitar cotización</option>
+                    <option value="soporte">Soporte / Consulta</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <input id="mensaje" name="mensaje" type="text" placeholder="Ejemplo: Quiero una RTX 4060 con envío a..." required>
+                </div>
                 </div>
 
                 <div>
-                    <label>Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Ejemplo: Quiero una RTX 4060 con envío a..." required></textarea>
+                <label for="detalle">Detalle</label>
+                <textarea id="detalle" name="detalle" rows="5" placeholder="Escribe detalles como ciudad, producto y presupuesto..." required></textarea>
                 </div>
 
                 <button type="submit">Enviar</button>
             </form>
         </section>
     </main>
-    
+
     <footer>
-        © 2026 · H Tech Store · Componentes y periféricos gamer · Todos los derechos reservados
+        © 2026 · H-Tech Store · Componentes y periféricos gamer · Todos los derechos reservados
     </footer>
 
 </body>
