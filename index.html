@@ -1,208 +1,286 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H-Tech Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H-Tech Store</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./icons/icon-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="flex-header container">
-    <h1>H-Tech Store</h1>
-    <nav class="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#categorias">Categorías</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#datos">Productos</a>
-      <a href="#multimedia">Multimedia</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
-</header>
+    <header>
+        <div class="container flex-header">
+            <h1>H-Tech Store</h1>
+            <nav class="menu" aria-label="Menú">
+                <a href="#inicio">Inicio</a>
+                <a href="#categorias">Categorías</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-<main class="container">
+    <main class="container">
 
-  <!-- Sección de inicio -->
-  <section id="inicio">
-    <h2>Inicio</h2>
-    <p>Bienvenido a H-Tech Store, tu tienda online donde encontrarás todos los componentes y accesorios para tu PC.</p>
-    <img src="./img/img1gaming.jpg" alt="Setup Gamer">
-  </section>
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Bienvenido a H-Tech Store, tu tienda online de accesorios y componentes para tu PC.</p>
+            <img src="./img/img-game.jpg" alt="Setup Gamer">
+        </section>
 
-  <!-- Sección de categorías -->
-  <section id="categorias">
-    <h2>Categorías</h2>
-    <div class="tarjeta">
-      <article><h3>GPU</h3></article>
-      <article><h3>CPU</h3></article>
-      <article><h3>Motherboards</h3></article>
-      <article><h3>Teclados</h3></article>
-      <article><h3>Auriculares</h3></article>
-      <article><h3>Monitores</h3></article>
-      <article><h3>Almacenamiento</h3></article>
-      <article><h3>Periféricos</h3></article>
+        <section id="ofertas">
+            <h2>Ofertas del Mes</h2>
+            <div class="tarjeta">
+                <article>
+                    <img src="./img/img-ry5500.jpg" alt="Ryzen 5 5500">
+                    <div class="content">
+                        <span class="etiqueta">CPU</span>
+                        <h3>Ryzen 5 5500</h3>
+                        <p class="precio-old">S/ 499</p>
+                        <p class="precio-new">S/ 449</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-mx.png" alt="Logitech MX Mechanical">
+                    <div class="content">
+                        <span class="etiqueta">Teclado</span>
+                        <h3>Logitech MX Mechanical</h3>
+                        <p class="precio-old">S/ 699</p>
+                        <p class="precio-new">S/ 649</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-g522.jpg" alt="Logitech G522">
+                    <div class="content">
+                        <span class="etiqueta">Auriculares</span>
+                        <h3>Logitech G522</h3>
+                        <p class="precio-old">S/ 599</p>
+                        <p class="precio-new">S/ 549</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section id="categorias">
+            <h2>Categorías</h2>
+            <div class="categories">
+                <div class="category-item">
+                    <img src="./img/img-gpu.jpeg" alt="GPU">
+                    <div class="overlay">GPU</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-cpu.jpg" alt="CPU">
+                    <div class="overlay">CPU</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-mothb.jpg" alt="Motherboard">
+                    <div class="overlay">Motherboard</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-teclado.jpg" alt="Teclados">
+                    <div class="overlay">Teclados</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-mouse.jpg" alt="Mouse">
+                    <div class="overlay">Mouse</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-headph.jpg" alt="Auriculares">
+                    <div class="overlay">Auriculares</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-sdd.jpg" alt="Almacenamiento">
+                    <div class="overlay">Almacenamiento</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-monitor.jpg" alt="Monitores">
+                    <div class="overlay">Monitores</div>
+                </div>
+                <div class="category-item">
+                    <img src="./img/img-fuente.jpg" alt="Fuentes">
+                    <div class="overlay">Fuente</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo">
+            <h2>Catálogo</h2>
+            <div class="tarjeta">
+                <article>
+                    <img src="./img/img-rtx4060.jpg" alt="RTX 4060">
+                    <div class="content">
+                        <span class="etiqueta">GPU</span>
+                        <h3>Nvidia GeForce RTX 4060</h3>
+                        <p class="precio">S/ 1,599</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-rx7600.jpg" alt="RX 7600">
+                    <div class="content">
+                        <span class="etiqueta">GPU</span>
+                        <h3>AMD Radeon RX 7600</h3>
+                        <p class="precio">S/ 1,299</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-ry5500.jpg" alt="Ryzen 5 5500">
+                    <div class="content">
+                        <span class="etiqueta">CPU</span>
+                        <h3>Ryzen 5 5500</h3>
+                        <p class="precio">S/ 499</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-b760m.png" alt="Msi B760M">
+                    <div class="content">
+                        <span class="etiqueta">Motherboard</span>
+                        <h3>Msi B760M</h3>
+                        <p class="precio">S/ 450</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-mx.png" alt="Logitech MX Mechanical">
+                    <div class="content">
+                        <span class="etiqueta">Teclado</span>
+                        <h3>Logitech MX Mechanical</h3>
+                        <p class="precio">S/ 699</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-g522.jpg" alt="Logitech G522">
+                    <div class="content">
+                        <span class="etiqueta">Auriculares</span>
+                        <h3>Logitech G522</h3>
+                        <p class="precio">S/ 599</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-lgmon.jpg" alt="Monitor 24">
+                    <div class="content">
+                        <span class="etiqueta">Monitor</span>
+                        <h3>Monitor 24"</h3>
+                        <p class="precio">S/ 899</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-ssd500.jpg" alt="SSD 500GB">
+                    <div class="content">
+                        <span class="etiqueta">Almacenamiento</span>
+                        <h3>SSD 500GB Western Digital</h3>
+                        <p class="precio">S/ 250</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="./img/img-600w.jpg" alt="Fuente 600W">
+                    <div class="content">
+                        <span class="etiqueta">Fuente</span>
+                        <h3>Fuente 600W 80+ EVGA</h3>
+                        <p class="precio">S/ 350</p>
+                        <a class="btn" href="#contacto">Lo quiero</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="datos">
+            <h2>Datos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>GPU</td><td>RTX 4060</td><td>S/ 1,599</td><td>5</td><td>48h</td></tr>
+                    <tr><td>GPU</td><td>RX 7600</td><td>S/ 1,299</td><td>8</td><td>24-48h</td></tr>
+                    <tr><td>CPU</td><td>Ryzen 5 5500</td><td>S/ 499</td><td>8</td><td>72h</td></tr>
+                    <tr><td>Motherboard</td><td>Msi B760M</td><td>S/ 450</td><td>3</td><td>24-48h</td></tr>
+                    <tr><td>Teclado</td><td>Logitech MX Mechanical</td><td>S/ 699</td><td>15</td><td>24h</td></tr>
+                    <tr><td>Auriculares</td><td>Logitech G522</td><td>S/ 599</td><td>10</td><td>48h</td></tr>
+                    <tr><td>Monitor</td><td>Monitor 24" LG</td><td>S/ 899</td><td>7</td><td>48h</td></tr>
+                    <tr><td>SSD</td><td>SSD 500GB Western Digital</td><td>S/ 250</td><td>12</td><td>24h</td></tr>
+                    <tr><td>Fuente</td><td>Fuente 600W 80+ EVGA</td><td>S/ 350</td><td>5</td><td>48h</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="multimedia">
+            <h2>Multimedia</h2>
+            <video controls>
+                <source src="./media/logi.mp4" type="video/mp4">
+            </video>
+            <audio controls>
+                <source src="./media/fire.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form action="" method="post" autocomplete="off">
+                <div class="fila">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div>
+                        <label for="interes">Interés</label>
+                        <select id="interes" name="interes" required>
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="ofertas">Recibir ofertas</option>
+                            <option value="cotizacion">Solicitar cotización</option>
+                            <option value="soporte">Soporte / Consulta</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <input id="mensaje" name="mensaje" type="text" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="detalle">Detalle</label>
+                    <textarea id="detalle" name="detalle" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+    
+    <div class="flex-footer">
+        <div><img class="icon" src="./icons/icon-wa.png"> +51 936665172</div>
+        <div><img class="icon"  src="./icons/icon-ig.png"> @htechstore</div>
+        <div><img class="icon" src="./icons/icon-fb.png"> H-Tech Store</div>
+        <div><img class="icon" src="./icons/icon-tk.png"> @htechstore</div>
     </div>
-  </section>
 
-  <!-- Productos mejor precio -->
-  <section id="ofertas">
-    <h2>Ofertas del Mes</h2>
-    <div class="tarjeta">
-      <article>
-        <img src="./img/ryzen5500.jpg" alt="Ryzen 5 5500">
-        <div class="content">
-          <span class="etiqueta">CPU</span>
-          <h3>Ryzen 5 5500</h3>
-          <p>Precio: S/499</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/mxmech.png" alt="MX Mechanical">
-        <div class="content">
-          <span class="etiqueta">Teclados</span>
-          <h3>Logitech MX Mechanical</h3>
-          <p>Precio: S/699</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/ssd1tb.jpg" alt="SSD 1TB">
-        <div class="content">
-          <span class="etiqueta">Almacenamiento</span>
-          <h3>SSD 1TB NVMe</h3>
-          <p>Precio: S/450</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Catálogo completo -->
-  <section id="catalogo">
-    <h2>Catálogo Completo</h2>
-    <div class="tarjeta">
-      <article>
-        <img src="./img/rtx4060.jpg" alt="RTX 4060">
-        <div class="content">
-          <span class="etiqueta">GPU</span>
-          <h3>Nvidia RTX 4060</h3>
-          <p>Precio: S/1599</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/rx7600.jpg" alt="RX 7600">
-        <div class="content">
-          <span class="etiqueta">GPU</span>
-          <h3>AMD RX 7600</h3>
-          <p>Precio: S/1299</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/b760m.png" alt="B760M">
-        <div class="content">
-          <span class="etiqueta">Motherboard</span>
-          <h3>Msi B760M</h3>
-          <p>Precio: S/450</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/g522.jpg" alt="G522">
-        <div class="content">
-          <span class="etiqueta">Auriculares</span>
-          <h3>Logitech G522</h3>
-          <p>Precio: S/599</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/monitor27.jpg" alt="Monitor 27">
-        <div class="content">
-          <span class="etiqueta">Monitores</span>
-          <h3>Monitor Gamer 27"</h3>
-          <p>Precio: S/1200</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-      <article>
-        <img src="./img/mouse.jpg" alt="Mouse">
-        <div class="content">
-          <span class="etiqueta">Periféricos</span>
-          <h3>Mouse Gamer RGB</h3>
-          <p>Precio: S/199</p>
-          <a class="btn" href="#contacto">Lo quiero</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Tabla de productos -->
-  <section id="datos">
-    <h2>Productos Disponibles</h2>
-    <table>
-      <thead>
-        <tr><th>Categoría</th><th>Producto</th><th>Precio</th><th>Stock</th><th>Entrega</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>GPU</td><td>Nvidia RTX 4060</td><td>S/1599</td><td>5</td><td>48h</td></tr>
-        <tr><td>GPU</td><td>AMD RX 7600</td><td>S/1299</td><td>8</td><td>24-48h</td></tr>
-        <tr><td>CPU</td><td>Ryzen 5 5500</td><td>S/499</td><td>8</td><td>72h</td></tr>
-        <tr><td>Motherboard</td><td>Msi B760M</td><td>S/450</td><td>3</td><td>24-48h</td></tr>
-        <tr><td>Teclados</td><td>Logitech MX Mechanical</td><td>S/699</td><td>15</td><td>24h</td></tr>
-        <tr><td>Auriculares</td><td>Logitech G522</td><td>S/599</td><td>10</td><td>48h</td></tr>
-        <tr><td>Almacenamiento</td><td>SSD 1TB NVMe</td><td>S/450</td><td>12</td><td>24h</td></tr>
-        <tr><td>Monitores</td><td>Monitor Gamer 27"</td><td>S/1200</td><td>6</td><td>48h</td></tr>
-        <tr><td>Periféricos</td><td>Mouse Gamer RGB</td><td>S/199</td><td>20</td><td>24h</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Multimedia -->
-  <section id="multimedia">
-    <h2>Multimedia</h2>
-    <video controls>
-      <source src="media/logi.mp4" type="video/mp4">
-    </video>
-    <audio controls>
-      <source src="media/fire.mp3" type="audio/mpeg">
-    </audio>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <form action="" method="post" autocomplete="off">
-      <div class="fila">
-        <div><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" required></div>
-        <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-      </div>
-      <div>
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-
-</main>
-
-<div class="flex-footer">
-  <div><i class="fa-brands fa-whatsapp"></i>+51 999999999</div>
-  <div><i class="fa-brands fa-instagram"></i>@htechstore</div>
-  <div><i class="fa-brands fa-facebook"></i>H-Tech Store</div>
-  <div><i class="fa-brands fa-tiktok"></i>@htechstore</div>
-</div>
-
-<footer>
-© 2026 · H-Tech Store · Componentes y periféricos gamer · Todos los derechos reservados
-</footer>
+    <footer>
+        © 2026 · H-Tech Store · Todos los derechos reservados
+    </footer>
 
 </body>
 </html>
