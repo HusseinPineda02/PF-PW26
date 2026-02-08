@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #000000;
+    --navy: #071427;
+    --linea: #152a45;
+    --texto: #eaeaea;
+    --muted: #bdbdbd;
+    --accent: #25456f;
+    --radius: 12px;
+    --gap: 15px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background: rgba(0,0,0,0.92);
+    border-bottom: 1px solid var(--linea);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+header h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+nav.menu a {
+    color: var(--texto);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+nav.menu a:hover {
+    background: rgba(11,30,58,0.35);
+    border-color: var(--linea);
+}
+
+.grid-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--gap);
+    padding: 20px 0;
+}
+
+@media (max-width: 900px) {
+    .grid-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+section {
+    border: 1px solid var(--linea);
+    border-radius: var(--radius);
+    padding: 15px;
+    margin: 15px 0;
+    background: rgba(7,20,39,0.59);
+}
+
+section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+p { margin: 8px 0; }
+
+.tarjeta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    margin-top: 10px;
+}
+
+.tarjeta article {
+    background: rgba(11,30,58,0.25);
+    border: 1px solid var(--linea);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tarjeta article:hover {
+    transform: scale(1.03);
+    background: rgba(11,30,58,0.38);
+}
+
+.tarjeta article img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--linea);
+}
+
+.tarjeta article .content {
+    padding: 12px;
+}
+
+.etiqueta {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--muted);
+    border: 1px solid rgba(234,234,234,0.18);
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.25);
+}
+
+.tarjeta article h3 {
+    margin: 8px 0 10px;
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(234,234,234,0.20);
+    background: rgba(0,0,0,0.35);
+    color: var(--texto);
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    background: rgba(0,0,0,0.55);
+    border-color: rgba(234,234,234,0.30);
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) { .tarjeta { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .tarjeta { grid-template-columns: 1fr; } }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid var(--linea);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: rgba(0,0,0,0.30);
+}
+
+thead th {
+    text-align: left;
+    padding: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--linea);
+    background: rgba(11,30,58,0.45);
+}
+
+tbody td {
+    padding: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--linea);
+}
+
+tbody tr:hover {
+    background: rgba(11,30,58,0.22);
+}
+
+form {
+    max-width: 720px;
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 700px) { .fila { grid-template-columns: 1fr; } }
+
+label {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1px solid var(--linea);
+    background: rgba(0,0,0,0.35);
+    color: var(--texto);
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+}
+
+button {
+    width: fit-content;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(234,234,234,0.22);
+    background: rgba(11,30,58,0.40);
+    color: var(--texto);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: rgba(11,30,58,0.55);
+    border-color: rgba(234,234,234,0.30);
+}
+
+video, audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: var(--radius);
+    border: 1px solid var(--linea);
+    background: rgba(0,0,0,0.20);
+}
+
+#multimedia video {
+    display: block;
+    width: min(360px, 100%);
+    aspect-ratio: 9/16;
+    height: auto;
+    margin: 10px auto 0;
+    object-fit: contain;
+}
+
+aside {
+    background: rgba(11,30,58,0.25);
+    border: 1px solid var(--linea);
+    border-radius: var(--radius);
+    padding: 10px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socials div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.socials i {
+    font-size: 18px;
+}
+
+footer {
+    background: rgba(0,0,0,0.92);
+    color: var(--texto);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--linea);
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.btn:hover {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    body { font-size: 14px; }
+}
+@media (max-width: 768px) {
+    .flex-header { flex-direction: column; align-items: flex-start; }
+    .flex-footer { flex-direction: column; align-items: center; gap: 10px; }
+}
