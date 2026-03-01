@@ -1,4 +1,3 @@
-// Productos iniciales
 let products = [
   {id:1,name:"RTX 4060",category:"GPU",price:1599,stock:5,img:"./img/img-rtx4060.jpg"},
   {id:2,name:"RX 7600",category:"GPU",price:1299,stock:8,img:"./img/img-rx7600.jpg"},
@@ -29,43 +28,56 @@ const categories = [
   {name:"Fuente",img:"./img/img-fuente.jpg"}
 ];
 
-// Selecciones
-const catalogoBody=document.getElementById("catalogo-body");
-const inventarioBody=document.getElementById("inventario-body");
-const ofertasBody=document.getElementById("ofertas-body");
-const categoriesBody=document.getElementById("categories-body");
-const addBtn=document.getElementById("add-product-btn");
-const modal=document.getElementById("modal-product");
-const modalClose=document.getElementById("modal-close");
-const saveProduct=document.getElementById("save-product");
-const hamburger=document.getElementById("hamburger");
-const menu=document.querySelector("nav.menu");
+const catalogoBody = document.getElementById("catalogo-body");
+const inventarioBody = document.getElementById("inventario-body");
+const ofertasBody = document.getElementById("ofertas-body");
+const categoriesBody = document.getElementById("categories-body");
 
-// Render funciones
+const addBtn = document.getElementById("add-product-btn");
+const modal = document.getElementById("modal-product");
+const modalClose = document.getElementById("modal-close");
+const saveProduct = document.getElementById("save-product");
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.querySelector("nav.menu");
+
 function renderCatalog(){
-  catalogoBody.innerHTML="";
-  products.forEach(p=>{
-    const article=document.createElement("article");
-    article.innerHTML=`<img src="${p.img}" alt="${p.name}">
-      <div class="content"><span class="etiqueta">${p.category}</span><h3>${p.name}</h3><p class="precio">S/ ${p.price}</p></div>`;
+  catalogoBody.innerHTML = "";
+  products.forEach(p => {
+    const article = document.createElement("article");
+    article.innerHTML = `
+      <img src="${p.img}" alt="${p.name}">
+      <div class="content">
+        <span class="etiqueta">${p.category}</span>
+        <h3>${p.name}</h3>
+        <p class="precio">S/ ${p.price}</p>
+        <a href="#contacto" class="btn btn-loquiero">Lo quiero</a>
+      </div>
+    `;
+    article.addEventListener("mouseover",()=>console.log(`Hover: ${p.name}`));
+    article.addEventListener("mouseout",()=>console.log(`Mouse out: ${p.name}`));
     catalogoBody.appendChild(article);
   });
 }
 
 function renderInventory(){
-  inventarioBody.innerHTML="";
-  products.forEach(p=>{
-    const tr=document.createElement("tr");
-    tr.innerHTML=`<td>${p.id}</td><td>${p.name}</td><td>${p.category}</td><td>${p.price}</td><td>${p.stock}</td>
-      <td><button class="btn delete-btn" data-id="${p.id}">Eliminar</button></td>`;
+  inventarioBody.innerHTML = "";
+  products.forEach(p => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${p.id}</td><td>${p.name}</td><td>${p.category}</td><td>${p.price}</td><td>${p.stock}</td>
+      <td><button class="btn delete-btn" data-id="${p.id}">Eliminar</button></td>
+    `;
     inventarioBody.appendChild(tr);
   });
+
   document.querySelectorAll(".delete-btn").forEach(btn=>{
-    btn.addEventListener("click",e=>{
-      const id=parseInt(e.target.dataset.id);
-      const prod=products.find(p=>p.id===id);
+    btn.addEventListener("click", e=>{
+      const id = parseInt(e.target.dataset.id);
+      const prod = products.find(p => p.id === id);
       if(confirm(`¿Eliminar ${prod.name} (${prod.category})?`)){
-        products=products.filter(p=>p.id!==id);
+        products = products.filter(p => p.id !== id);
+        alert(`${prod.name} eliminado correctamente`);
         renderCatalog();
         renderInventory();
       }
@@ -74,52 +86,10 @@ function renderInventory(){
 }
 
 function renderOffers(){
-  ofertasBody.innerHTML="";
+  ofertasBody.innerHTML = "";
   ofertas.forEach(o=>{
-    const article=document.createElement("article");
-    article.innerHTML=`<img src="${o.img}" alt="${o.name}">
-      <div class="content"><span class="etiqueta">Oferta</span><h3>${o.name}</h3>
-      <p class="precio-old">S/ ${o.price_old}</p><p class="precio-new">S/ ${o.price_new}</p></div>`;
-    ofertasBody.appendChild(article);
-  });
-}
-
-function renderCategories(){
-  categoriesBody.innerHTML="";
-  categories.forEach(c=>{
-    const div=document.createElement("div");
-    div.classList.add("category-item");
-    div.innerHTML=`<img src="${c.img}" alt="${c.name}"><div class="overlay">${c.name}</div>`;
-    categoriesBody.appendChild(div);
-  });
-}
-
-// Modal
-addBtn.addEventListener("click",()=>{modal.classList.add("active");});
-modalClose.addEventListener("click",()=>{modal.classList.remove("active");});
-saveProduct.addEventListener("click",()=>{
-  const name=document.getElementById("new-name").value;
-  const category=document.getElementById("new-category").value;
-  const price=parseFloat(document.getElementById("new-price").value);
-  const stock=parseInt(document.getElementById("new-stock").value);
-  if(name && category && !isNaN(price) && !isNaN(stock)){
-    const id=products.length?products[products.length-1].id+1:1;
-    products.push({id,name,category,price,stock,img:"./img/img-game.jpg"});
-    renderCatalog(); renderInventory(); modal.classList.remove("active");
-    document.getElementById("new-name").value="";
-    document.getElementById("new-category").value="";
-    document.getElementById("new-price").value="";
-    document.getElementById("new-stock").value="";
-  }else alert("Completa todos los campos correctamente.");
-});
-
-
-// Ofertas con botón "Lo quiero"
-function renderOffers(){
-  ofertasBody.innerHTML="";
-  ofertas.forEach(o=>{
-    const article=document.createElement("article");
-    article.innerHTML=`
+    const article = document.createElement("article");
+    article.innerHTML = `
       <img src="${o.img}" alt="${o.name}">
       <div class="content">
         <span class="etiqueta">Oferta</span>
@@ -127,36 +97,72 @@ function renderOffers(){
         <p class="precio-old">S/ ${o.price_old}</p>
         <p class="precio-new">S/ ${o.price_new}</p>
         <a href="#contacto" class="btn btn-oferta">Lo quiero</a>
-      </div>`;
+      </div>
+    `;
+    article.addEventListener("mouseover",()=>console.log(`Hover oferta: ${o.name}`));
+    article.addEventListener("mouseout",()=>console.log(`Mouse out oferta: ${o.name}`));
     ofertasBody.appendChild(article);
   });
 }
 
-// Catálogo también mantiene botón "Lo quiero"
-function renderCatalog(){
-  catalogoBody.innerHTML="";
-  products.forEach(p=>{
-    const article=document.createElement("article");
-    article.innerHTML=`
-      <img src="${p.img}" alt="${p.name}">
-      <div class="content">
-        <span class="etiqueta">${p.category}</span>
-        <h3>${p.name}</h3>
-        <p class="precio">S/ ${p.price}</p>
-        <a href="#contacto" class="btn">Lo quiero</a>
-      </div>`;
-    catalogoBody.appendChild(article);
+function renderCategories(){
+  categoriesBody.innerHTML = "";
+  categories.forEach(c=>{
+    const div = document.createElement("div");
+    div.classList.add("category-item");
+    div.innerHTML = `<img src="${c.img}" alt="${c.name}"><div class="overlay">${c.name}</div>`;
+    categoriesBody.appendChild(div);
   });
 }
 
-// Menú hamburguesa: cerrar al hacer click fuera o en enlace
-hamburger.addEventListener("click",()=>{ menu.classList.toggle("active"); });
-menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{ menu.classList.remove("active"); }));
-window.addEventListener("click",e=>{
+addBtn.addEventListener("click", ()=>{ modal.classList.add("active"); });
+modalClose.addEventListener("click", ()=>{ modal.classList.remove("active"); });
+
+saveProduct.addEventListener("click", ()=>{
+  const name = document.getElementById("new-name").value;
+  const category = document.getElementById("new-category").value;
+  const price = parseFloat(document.getElementById("new-price").value);
+  const stock = parseInt(document.getElementById("new-stock").value);
+
+  if(name && category && !isNaN(price) && !isNaN(stock)){
+    const id = products.length ? products[products.length-1].id + 1 : 1;
+    products.push({id,name,category,price,stock,img:"./img/img-game.jpg"});
+    alert(`Producto ${name} agregado!`);
+    renderCatalog();
+    renderInventory();
+    modal.classList.remove("active");
+    document.getElementById("new-name").value="";
+    document.getElementById("new-category").value="";
+    document.getElementById("new-price").value="";
+    document.getElementById("new-stock").value="";
+  }else alert("Completa todos los campos correctamente.");
+});
+
+hamburger.addEventListener("click", ()=>{ menu.classList.toggle("active"); });
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click", ()=>{ menu.classList.remove("active"); }));
+window.addEventListener("click", e=>{
   if(!menu.contains(e.target) && !hamburger.contains(e.target)){ menu.classList.remove("active"); }
 });
 
-// Inicial
+window.addEventListener("keydown", e=>{
+  if(e.key === "Escape"){ menu.classList.remove("active"); modal.classList.remove("active"); }
+});
+
+document.getElementById("new-price").addEventListener("change", e=>{
+  const val = parseFloat(e.target.value);
+  if(val < 0) alert("El precio no puede ser negativo");
+});
+
+document.getElementById("new-stock").addEventListener("change", e=>{
+  const val = parseInt(e.target.value);
+  if(val < 0) alert("El stock no puede ser negativo");
+});
+
+document.querySelectorAll("#inventario-body tr").forEach(tr=>{
+  tr.addEventListener("mouseover",()=>{ tr.style.backgroundColor="rgba(50,50,100,0.2)"; });
+  tr.addEventListener("mouseout",()=>{ tr.style.backgroundColor=""; });
+});
+
 renderCatalog();
 renderInventory();
 renderOffers();
