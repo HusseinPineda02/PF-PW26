@@ -167,4 +167,3 @@ renderCatalog();
 renderInventory();
 renderOffers();
 renderCategories();
-
